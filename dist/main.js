@@ -20,3 +20,7 @@ const hostname = "127.0.0.1";
 app.listen(Number(process.env.PORT), hostname, () => {
     console.log("Server Started");
 });
+// function middleWare(req: Request, res: Response, next: NextFunction) {
+//     console.log('Hello from middleware')
+//     next()
+// }

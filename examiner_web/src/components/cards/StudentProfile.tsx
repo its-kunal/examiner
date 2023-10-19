@@ -18,7 +18,5 @@ export default function StudentProfile({
   const avatar = createAvatar(thumbs, {
     seed: name,
   });
-  return <div className="">
-    
-  </div>;
+  return <div className=""></div>;
 }

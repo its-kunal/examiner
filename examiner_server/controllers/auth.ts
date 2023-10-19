@@ -36,8 +36,8 @@ export const registerHandler = async (req: Request, res: Response) => {
 };
 
 export const registerExaminer = async (req: Request, res: Response) => {
-    const { name, username, password, email } = req.body;
-    await examinerModel.create({ name, username, password, email });
-    const token = await sign({ username }, SECRET, { expiresIn: "1d" });
-    res.status(200).json({ message: "Registration Successful", token });
-  }
+  const { name, username, password, email } = req.body;
+  await examinerModel.create({ name, username, password, email });
+  const token = await sign({ username }, SECRET, { expiresIn: "1d" });
+  res.status(200).json({ message: "Registration Successful", token });
+};

@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
-export function tryCatchRequest(fn:Function) {
-  return async (req:Request, res:Response) => {
+export function tryCatchRequest(fn: Function) {
+  return async (req: Request, res: Response) => {
     try {
       await fn(req, res);
     } catch (error: any) {

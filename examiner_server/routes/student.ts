@@ -49,32 +49,17 @@ router.get("/exam/:examId", async (req, res) => {
 });
 
 // Incomplete
-router.post("/exam/:examId/start", async (req, res)=>{
-  
-})
+router.post("/exam/:examId/start", async (req, res) => {});
 
 // End Test - Incomplete
-router.get("/exam/:examId/end", async (req, res)=>{
-  
-})
+router.get("/exam/:examId/end", async (req, res) => {});
 
-router.post("/exam/:examId/answer", async (req, res)=>{
-  
-})
+router.post("/exam/:examId/answer", async (req, res) => {});
 
-router.post("/exam/:examId/reset", async (req, res)=>{
-  
-})
+router.post("/exam/:examId/reset", async (req, res) => {});
 
-router.get("/exam/:examId/result", async (req, res)=>{
-  
-})
+router.get("/exam/:examId/result", async (req, res) => {});
 
-router.get("/exam/result", async (req, res)=>{
-  
-})
-
-
-
+router.get("/exam/result", async (req, res) => {});
 
 export default router;

@@ -7,7 +7,6 @@ import { getExaminerId } from "../controllers/examiner";
 dotenv.config();
 const SECRET = process.env.SECRET || "";
 
-
 export async function verifyStudent(
   req: Request,
   res: Response,

@@ -15,7 +15,7 @@ export default function RegisterStudentForm() {
       }}
     >
       <Typography variant="h6" component="h1" align="center">
-Examiner Login
+        Examiner Login
       </Typography>
 
       {/* Roll No */}

@@ -47,7 +47,7 @@ export const reportSchema = new Schema<Report>({
   questionsCorrect: Number,
   questionsWrong: Number,
   questionUnanswered: Number,
-  questionAnswered : Number,
+  questionAnswered: Number,
   percentage: Number,
   isExamEnded: {
     type: Boolean,

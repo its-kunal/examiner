@@ -9,7 +9,7 @@ import os from "os";
 import fs from "fs";
 import Handlebars from "handlebars";
 import hbs from "hbs";
-import path from "path"
+import path from "path";
 import puppeteer from "puppeteer";
 import authRoute from "./routes/auth";
 import examRoute from "./routes/exam";
@@ -92,7 +92,6 @@ mongoose
   })
   .catch((err) => {
     console.log("Couldn't connect to Database");
-  }); 
-
+  });
 
 // export const upload =  multer({ dest: storagePath });

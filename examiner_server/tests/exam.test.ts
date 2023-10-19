@@ -20,9 +20,11 @@ describe("exam api test", () => {
     // await mongoose.connect(testMongoURI);
     app.listen("4000", () => {
       console.log("server started");
-      console.log(mongoose.connection.on("connected", () => {
-        console.log("connected");
-      }));
+      console.log(
+        mongoose.connection.on("connected", () => {
+          console.log("connected");
+        })
+      );
     });
     // app.length
   });

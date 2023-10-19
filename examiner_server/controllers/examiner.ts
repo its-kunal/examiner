@@ -350,7 +350,7 @@ export const sendPassword = async ({
     st.password = newPass;
     await st.save();
 
-    let gmailTransport =  createTransport({
+    let gmailTransport = createTransport({
       host: "smtp.gmail.com",
       port: 465,
       secure: true,
@@ -372,4 +372,3 @@ export const sendPassword = async ({
     throw new Error("Couldn't Send Email, try again later!!");
   }
 };
-

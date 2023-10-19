@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Avatar, Button, IconButton, Input, Tooltip } from "@mui/material";
 import { createAvatar } from "@dicebear/core";
 import { notionists } from "@dicebear/collection";

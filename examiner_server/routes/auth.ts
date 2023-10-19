@@ -18,4 +18,3 @@ router.post("/", tryCatchRequest(registerHandler));
 router.post("/examiner", tryCatchRequest(registerExaminer));
 
 export default router;
-  

@@ -40,7 +40,11 @@ const examinerPutHandler = async (req: Request, res: Response) => {
   res.status(200).json({ message: "Profile Updated" });
 };
 
-router.put("/", upload.single("instituteLogo") ,tryCatchRequest(examinerPutHandler));
+router.put(
+  "/",
+  upload.single("instituteLogo"),
+  tryCatchRequest(examinerPutHandler)
+);
 
 const examinerGetHandler = async (req: Request, res: Response) => {
   let username: string;

@@ -16,7 +16,7 @@ const router = Router();
 
 router.get("/", tryCatchRequest(examCb));
 
-router.post("/", upload.single("instituteLogo"), tryCatchRequest(createExamCb));   
+router.post("/", upload.single("instituteLogo"), tryCatchRequest(createExamCb));
 
 router.get("/:examId", tryCatchRequest(getExamHandler));
 

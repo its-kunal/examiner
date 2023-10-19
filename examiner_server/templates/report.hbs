@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Student Report Card</title>
+  </head>
+  <link rel="stylesheet" href="report.css" />
+  <body>
+    <h1>Student Report Card</h1>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Roll Number</th>
+        <th>Exam Date</th>
+        <th>Positive Marks</th>
+        <th>Negative Marks</th>
+        <th>Max Marks</th>
+        <th>Total Marks</th>
+        <th>Percentage</th>
+      </tr>
+      {{#each reports}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.rollno}}</td>
+          <td>{{this.createdAt}}</td>
+          <td>{{this.positiveMarks}}</td>
+          <td>{{this.negativeMarks}}</td>
+          <td>{{this.maxMarks}}</td>
+          <td>{{this.totalMarks}}</td>
+          <td>{{this.percentage}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </body>
+</html>

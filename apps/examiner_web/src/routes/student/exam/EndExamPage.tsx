@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function EndExamPage() {
-  return (
-    <div>EndExamPage</div>
-  )
+  return <div>EndExamPage</div>;
 }

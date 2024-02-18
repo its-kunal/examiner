@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react";
 import SkeletonLoaderForm from "../../components/forms/SkeletonLoaderForm";
 const LoginStudentForm = lazy(
-  () => import("../../components/forms/LoginStudentForm")
+  () => import("../../components/forms/LoginStudentForm"),
 );
 
 export default function LoginStudent() {

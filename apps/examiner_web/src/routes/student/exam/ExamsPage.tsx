@@ -7,7 +7,7 @@ import ExamCardSkeleton from "../../../components/cards/ExamCardSkeleton";
 export default function StudentExam() {
   const [search, setSearch] = useState("");
   const handleSearch: React.MouseEventHandler<HTMLButtonElement> | undefined = (
-    e
+    e,
   ) => {
     e.preventDefault();
   };

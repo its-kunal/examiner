@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function ExamPage() {
-  return (
-    <div>ExamPage</div>
-  )
+  return <div>ExamPage</div>;
 }

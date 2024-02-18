@@ -33,8 +33,8 @@ const examinerPutHandler = async (req: Request, res: Response) => {
   const { username } = req.headers;
   let obj = Object.fromEntries(
     Object.entries({ name, email, emailPassword, instituteName }).filter(
-      ([x, y]) => y
-    )
+      ([x, y]) => y,
+    ),
   );
   await ExaminerModel.updateOne({ username }, obj);
   res.status(200).json({ message: "Profile Updated" });
@@ -43,7 +43,7 @@ const examinerPutHandler = async (req: Request, res: Response) => {
 router.put(
   "/",
   upload.single("instituteLogo"),
-  tryCatchRequest(examinerPutHandler)
+  tryCatchRequest(examinerPutHandler),
 );
 
 const examinerGetHandler = async (req: Request, res: Response) => {
@@ -55,7 +55,7 @@ const examinerGetHandler = async (req: Request, res: Response) => {
   }
   const examiner = await ExaminerModel.findOne(
     { username },
-    { password: -1, emailPassword: -1 }
+    { password: -1, emailPassword: -1 },
   );
   res.json({ examiner });
 };

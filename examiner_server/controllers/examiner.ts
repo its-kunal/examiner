@@ -61,7 +61,7 @@ export const registerExaminer = async ({
 
 // Manage Exams
 export const createExam = async (
-  examobj: Omit<Exam, "questions" | "createdAt">
+  examobj: Omit<Exam, "questions" | "createdAt">,
 ) => {
   try {
     await examModel.create(examobj);
@@ -77,7 +77,7 @@ export const getExams = async ({ examinerId }: { examinerId: string }) => {
         { examinerId },
         {
           questions: 0,
-        }
+        },
       )
       .sort({ startedAt: -1 });
     return exams;
@@ -147,7 +147,7 @@ export const editQuestion = async ({
         { _id: examId, "questions.id": questionId },
         {
           $set: { "questions.$": question },
-        }
+        },
       );
     } else throw Error();
   } catch (error) {
@@ -201,7 +201,7 @@ export const endAllExams = async ({ examId }: { examId: string }) => {
 export const editExaminerDetails = async (obj: Partial<Examiner>) => {
   try {
     obj = Object.fromEntries(
-      Object.entries(obj).filter(([_, v]) => v !== undefined)
+      Object.entries(obj).filter(([_, v]) => v !== undefined),
     );
     await examinerModel.findOneAndUpdate({ username: obj.username }, obj);
   } catch (error) {
@@ -224,7 +224,7 @@ export const resetStudentSession = async ({ rollno }: { rollno: string }) => {
       { rollno },
       {
         $set: { isLoggedIn: false },
-      }
+      },
     );
   } catch (error) {
     throw new Error("Couldn't update student session, try again later!!");
@@ -274,7 +274,7 @@ export const generateReports = async ({ examId }: any) => {
           : report.percentage.toPrecision(4);
         report.maxMarks = maxMarks;
         await report.save();
-      })
+      }),
     );
     // generate PDF for a specific report
     let l: [] = [];

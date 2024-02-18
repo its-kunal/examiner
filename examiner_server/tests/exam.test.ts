@@ -23,7 +23,7 @@ describe("exam api test", () => {
       console.log(
         mongoose.connection.on("connected", () => {
           console.log("connected");
-        })
+        }),
       );
     });
     // app.length
@@ -40,8 +40,8 @@ describe("exam api test", () => {
     data.append(
       "instituteLogo",
       fs.createReadStream(
-        "C:/Users/Kunal/OneDrive/Pictures/Raipur Dev Dungeon LogoArtboard 2 copy-100.jpg"
-      )
+        "C:/Users/Kunal/OneDrive/Pictures/Raipur Dev Dungeon LogoArtboard 2 copy-100.jpg",
+      ),
     );
     let obj = {
       name: "Abc",

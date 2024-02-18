@@ -116,7 +116,7 @@ export const getExams = async () => {
         {},
         {
           questions: 0,
-        }
+        },
       )
       .sort({ startedAt: -1 });
     return exams.map((e) => {
@@ -164,7 +164,7 @@ export const startExam = async ({
       });
     } else
       throw new Error(
-        `Report for rollno: ${rollno} and this exam already exists, Contact your examiner`
+        `Report for rollno: ${rollno} and this exam already exists, Contact your examiner`,
       );
   } catch (error) {
     throw new Error("Could not start exam, try again later!!");
@@ -190,7 +190,7 @@ export const answerQuestion = async ({
       },
       {
         arrayFilters: [{ "question.id": questionId }],
-      }
+      },
     );
   } catch (error) {
     throw new Error("Could not answer question, try again later!!");
@@ -215,7 +215,7 @@ export const resetAnswerQuestion = async ({
       },
       {
         arrayFilters: [{ "question.id": { $eq: questionId } }],
-      }
+      },
     );
   } catch (error) {
     throw new Error("Could not answer question, try again later!!");

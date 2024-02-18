@@ -81,12 +81,12 @@ mongoose
   .then(() => {
     let serverName = String(
       // @ts-ignore
-      os.networkInterfaces()["Wi-Fi"][1]["address"] || "localhost"
+      os.networkInterfaces()["Wi-Fi"][1]["address"] || "localhost",
     );
     app.listen(Number(process.env.PORT), serverName, () => {
       console.log(
         "Server Started",
-        `at http://${serverName}:${process.env.PORT}`
+        `at http://${serverName}:${process.env.PORT}`,
       );
     });
   })

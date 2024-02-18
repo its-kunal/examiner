@@ -10,7 +10,7 @@ const SECRET = process.env.SECRET || "";
 export async function verifyStudent(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   const token = req.headers.authorization?.split(" ")[1] || "";
   try {
@@ -25,14 +25,14 @@ export async function verifyStudent(
 export async function verifyExaminer(
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) {
   const token = req.headers.authorization?.split(" ")[1] || "";
   try {
     let decoded = verify(token, SECRET);
     req.body = { ...req.body, ...(decoded as JwtPayload) };
     let examinerId = String(
-      await getExaminerId({ username: req.body.username })
+      await getExaminerId({ username: req.body.username }),
     );
     req.body.examinerId = examinerId;
     req.headers["examinerId"] = examinerId;

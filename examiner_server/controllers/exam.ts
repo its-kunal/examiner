@@ -33,7 +33,7 @@ export const createExamCb = async (req: Request, res: Response) => {
     const instituteLogoPath = path.join(storagePath, `${uuid}.${ext}`);
     await fs.rename(
       path.join(storagePath, `${req.file?.filename}`),
-      instituteLogoPath
+      instituteLogoPath,
     );
     const instituteLogo = await sharp(instituteLogoPath)
       .resize(200)
@@ -46,8 +46,8 @@ export const createExamCb = async (req: Request, res: Response) => {
   const { name, instituteName, startedAt, endsAt } = req.body;
   let obj = Object.fromEntries(
     Object.entries({ name, instituteName, startedAt, endsAt }).filter(
-      ([key, value]) => value
-    )
+      ([key, value]) => value,
+    ),
   );
   await ExamModel.create({
     ...obj,
@@ -83,8 +83,8 @@ export const editExamHandler = async (req: Request, res: Response) => {
   const { name, institutesName, startedAt, endsAt } = req.body;
   let obj = Object.fromEntries(
     Object.entries({ name, institutesName, startedAt, endsAt }).filter(
-      ([key, value]) => value
-    )
+      ([key, value]) => value,
+    ),
   );
   await ExamModel.updateOne({ _id: examId }, obj);
   return res.json({ message: "Exam updated successfully" });
@@ -155,7 +155,7 @@ export const examReportHandler = async (req: Request, res: Response) => {
           _id: Types.ObjectId;
         },
         never
-      >
+      >,
   ) => {
     return new Promise(async (resolve, reject) => {
       try {
@@ -218,7 +218,7 @@ export const examReportHandler = async (req: Request, res: Response) => {
 
 export const deleteQuestionExamHandler = async (
   req: Request,
-  res: Response
+  res: Response,
 ) => {
   const { examId, questionId } = req.params;
   const exam = await ExamModel.findOne({ _id: examId });

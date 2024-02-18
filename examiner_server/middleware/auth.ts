@@ -7,7 +7,7 @@ const SECRET = process.env.SECRET || "";
 const secureRoutes = async (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) {

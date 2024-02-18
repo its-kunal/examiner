@@ -23,7 +23,7 @@ router.get("/:examId", tryCatchRequest(getExamHandler));
 router.put(
   "/:examId",
   upload.single("instituteLogo"),
-  tryCatchRequest(editExamHandler)
+  tryCatchRequest(editExamHandler),
 );
 
 router.delete("/:examId", tryCatchRequest(deleteExamHandler));
@@ -34,7 +34,7 @@ router.get("/:examId/report", tryCatchRequest(examReportHandler));
 
 router.delete(
   "/:examId/:questionId",
-  tryCatchRequest(deleteQuestionExamHandler)
+  tryCatchRequest(deleteQuestionExamHandler),
 );
 
 export default router;
